@@ -1,0 +1,11 @@
+object LongestWordFinder {
+  def main(args: Array[String]): Unit = {
+    val sentence = "Scala is a powerful and expressive programming language"
+
+    val words = sentence.split(" ")
+    val longestWord = words.maxBy(_.length)
+
+    println(s"Sentence: $sentence")
+    println(s"Longest word: $longestWord")
+  }
+}
