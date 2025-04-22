@@ -1,0 +1,20 @@
+object WordFrequencyCounter {
+  def main(args: Array[String]): Unit = {
+    val text = "Hello world, hello Scala. Welcome to the world of Scala programming."
+
+    // Normalize text: lowercase and remove punctuation
+    val cleanedText = text.toLowerCase.replaceAll("[^a-z\\s]", "")
+
+    // Split text into words
+    val words = cleanedText.split("\\s+")
+
+    // Count word frequencies
+    val wordFrequencies = words.groupBy(identity).view.mapValues(_.length).toMap
+
+    // Print the frequencies
+    println("Word frequencies:")
+    wordFrequencies.toSeq.sortBy(-_._2).foreach {
+      case (word, count) => println(s"$word: $count")
+    }
+  }
+}
