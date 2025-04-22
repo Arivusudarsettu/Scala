@@ -1,0 +1,18 @@
+object SimpleVowelConsonantCounter {
+  def main(args: Array[String]): Unit = {
+    val text = "Hello World"  // Example text
+
+    var vowels = 0
+    var consonants = 0
+
+    for (char <- text.toLowerCase) {
+      if (char.isLetter) {
+        if ("aeiou".contains(char)) vowels += 1
+        else consonants += 1
+      }
+    }
+
+    println(s"Vowels: $vowels")
+    println(s"Consonants: $consonants")
+  }
+}
