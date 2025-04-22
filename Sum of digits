@@ -1,0 +1,7 @@
+object SumOfDigits {
+  def main(args: Array[String]): Unit = {
+    val number = 12345  // You can change this to any number
+    val sum = number.toString.map(_.asDigit).sum
+    println(s"Sum of digits of $number is: $sum")
+  }
+}
