@@ -1,0 +1,32 @@
+object BasicCalculator {
+  
+  // Function to perform basic arithmetic operations
+  def calculate(num1: Double, num2: Double, operator: String): Double = {
+    operator match {
+      case "+" => num1 + num2
+      case "-" => num1 - num2
+      case "*" => num1 * num2
+      case "/" => 
+        if (num2 != 0) num1 / num2
+        else throw new ArithmeticException("Division by zero is not allowed.")
+      case _ => throw new IllegalArgumentException("Invalid operator.")
+    }
+  }
+
+  def main(args: Array[String]): Unit = {
+    println("Enter first number:")
+    val num1 = scala.io.StdIn.readDouble()  // Read first number
+    println("Enter second number:")
+    val num2 = scala.io.StdIn.readDouble()  // Read second number
+    println("Enter operator (+, -, *, /):")
+    val operator = scala.io.StdIn.readLine()  // Read operator
+
+    try {
+      // Call calculate function to get the result
+      val result = calculate(num1, num2, operator)
+      println(s"The result of $num1 $operator $num2 is: $result")
+    } catch {
+      case e: Exception => println(s"Error: ${e.getMessage}")
+    }
+  }
+}
