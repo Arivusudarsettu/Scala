@@ -1,0 +1,11 @@
+object CharOccurrenceCounter {
+  def main(args: Array[String]): Unit = {
+    val text = "Scala programming language"
+    val targetChar = 'a'  // Character to count
+
+    val count = text.count(_ == targetChar)
+
+    println(s"Text: $text")
+    println(s"Character '$targetChar' occurs $count times.")
+  }
+}
