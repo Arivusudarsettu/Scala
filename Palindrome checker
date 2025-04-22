@@ -1,0 +1,17 @@
+object PalindromeChecker {
+  // Function to check if a string is a palindrome
+  def isPalindrome(str: String): Boolean = {
+    val cleanedStr = str.toLowerCase.replaceAll("[^a-z0-9]", "") // Clean the string by removing non-alphanumeric characters
+    cleanedStr == cleanedStr.reverse  // Check if the string is equal to its reverse
+  }
+
+  def main(args: Array[String]): Unit = {
+    val input = "A man, a plan, a canal, Panama"
+    
+    if (isPalindrome(input)) {
+      println(s"\"$input\" is a palindrome.")
+    } else {
+      println(s"\"$input\" is not a palindrome.")
+    }
+  }
+}
