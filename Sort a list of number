@@ -1,0 +1,7 @@
+object SortList extends App {
+  val numbers = List(10, 3, 7, 2, 5)
+
+  val sortedList = numbers.sorted
+
+  println("Sorted List: " + sortedList)
+}
