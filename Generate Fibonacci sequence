@@ -1,0 +1,11 @@
+object FibonacciScala {
+  def fibonacci(n: Int): List[Int] = {
+    def loop(a: Int, b: Int, count: Int): List[Int] =
+      if (count == 0) Nil else a :: loop(b, a + b, count - 1)
+    loop(0, 1, n)
+  }
+
+  def main(args: Array[String]): Unit = {
+    println(fibonacci(10)) // Generate first 10 numbers
+  }
+}
