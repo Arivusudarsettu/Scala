@@ -1,0 +1,19 @@
+object PrimeChecker {
+  // Function to check if a number is prime
+  def isPrime(n: Int): Boolean = {
+    if (n <= 1) return false // Numbers less than or equal to 1 are not prime
+    for (i <- 2 to math.sqrt(n).toInt) {
+      if (n % i == 0) return false // If divisible by any number other than 1 and itself, not prime
+    }
+    true // If no divisors found, it's prime
+  }
+
+  def main(args: Array[String]): Unit = {
+    val number = 29 // Example number to check
+    if (isPrime(number)) {
+      println(s"$number is a prime number.")
+    } else {
+      println(s"$number is not a prime number.")
+    }
+  }
+}
