@@ -1,0 +1,14 @@
+object MaxMinInList {
+  def main(args: Array[String]): Unit = {
+    // Example list of numbers
+    val numbers = List(10, 2, 30, 4, 50, 12, 7)
+
+    // Find the maximum and minimum values using built-in methods
+    val max = numbers.max
+    val min = numbers.min
+
+    // Print the results
+    println(s"Maximum value: $max")
+    println(s"Minimum value: $min")
+  }
+}
